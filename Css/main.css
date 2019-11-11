@@ -3,10 +3,15 @@ body{
 	color: white;
 	background-color: grey;
 }a{
-	font-size: 40;
+	font-size: 25;
 	color: aliceblue;
-}
-p{
+}p{
 	font-size: 24;
 	color: white;
+}#button{
+	background-color: darkblue;
+	color: white;
+	padding: 1em 1.5em;
+	text-decoration: none;
+	text-transform: uppercase;
 }
