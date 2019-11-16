@@ -82,6 +82,24 @@ function keyPressed(){
   }
 }
 
+//mouse input for touch screen
+function mousePressed(){
+  this.mx = mouseX;
+  this.my = mouseY;
+  if(this.my > 0 && my < (wid/3)*20){
+    jake.goUp();
+  }
+  else if(this.my > (hei*20)-((hei/3)*20) && my < hei*20){
+    jake.goDown();
+  }
+  else if(this.mx > 0 && mx < (wid/3)*20){
+    jake.goLeft();
+  }
+  else if(this.mx > (wid*20)-(wid/3)*20 && this.mx < wid*20){
+    jake.goRight();
+  }
+}
+
 //display score
 function displayScore(){
   fill(255, 0, 0);

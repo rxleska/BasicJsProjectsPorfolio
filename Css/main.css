@@ -1,4 +1,9 @@
-.header {
+body{
+  margin: 20px; 
+  font-size: 20;
+	color: white;
+	background-color: grey;
+}.header {
   margin-left: 0;
   margin-top: 0;
   padding: 0px;
@@ -6,10 +11,6 @@
   background: #1abc9c;
   color: white;
   font-size: 30px;
-}body{
-	font-size: 20;
-	color: white;
-	background-color: grey;
 }a{
 	font-size: 25;
 	color: aliceblue;
