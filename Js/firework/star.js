@@ -1,5 +1,5 @@
 class Star{
-  constructor(x,y,z, xr, yr, zr, c){
+  constructor(x,y,z, xr, yr, zr, c, size){
     this.start = createVector(x,y,z);
     this.vec = createVector(0,0,0);
     //this.vecMo = createVector(random(-100,100)/50,random(-100,100)/50,random(-100,100)/50);
@@ -8,6 +8,7 @@ class Star{
     this.rotV = createVector(xr,yr,zr);
     //print(x+" "+y+" "+z);
     this.col = color(c);
+    this.fade = size;
     //print(this.vecMo.x + "" + this.vecMo.y + "" + this.vecMo.z);
   }
   
@@ -27,5 +28,11 @@ class Star{
     translate(this.vec);
     sphere(2, 2);
     pop();
+  }
+  checkBound(){
+    if(this.vec.x > this.fade && this.vec.y > this.fade && this.vec.z > this.fade){
+      return true;
+    }
+    return false;  
   }
 }

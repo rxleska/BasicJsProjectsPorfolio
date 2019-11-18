@@ -17,10 +17,7 @@ function draw() {
   fill(255, 0, 255);
   orbitControl();
   
-  for(var x = 0; x < star.length; x++ ){
-    star[x].move();
-    star[x].show();
-  }
+  star.forEach(forMet);
 }
 
 function keyPressed(){
@@ -31,13 +28,21 @@ function keyPressed(){
 }
 function createStars(){
   var xa = random(-100,100),ya = random(-100,100),za = random(-100,100);
+  var siz = random(20, 150);
   ca = color(random(0,255),random(0,255),random(0,255));
   for(var ex = -100; ex <= 100; ex+= 25){
     for(var ey = -100; ey <= 100; ey+= 25){
       for(var ez = -100; ez <= 100; ez+= 25){
-        star.push(new Star(xa, ya, za, ex/100, ey/100, ez/100, ca));
+        star.push(new Star(xa, ya, za, ex/100, ey/100, ez/100, ca, siz));
       }
     }
+  }
+}
+function forMet(item, index, array){
+  item.move();
+  item.show();
+  if(item.checkBound()){
+    array.splice(index,1);
   }
 }
 //function mousePressed(){

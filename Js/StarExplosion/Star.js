@@ -7,6 +7,7 @@ class Star{
     this.rotV = createVector(x,y,z);
     print(x+" "+y+" "+z);
     this.col = color(c);
+    this.fade = 200;
     //print(this.vecMo.x + "" + this.vecMo.y + "" + this.vecMo.z);
   }
   
@@ -25,5 +26,12 @@ class Star{
     translate(this.vec);
     sphere(5, 5);
     pop();
+  }
+  
+  checkBound(){
+    if(this.vec.x > this.fade && this.vec.y > this.fade && this.vec.z > this.fade){
+      return true;
+    }
+    return false;  
   }
 }

@@ -17,6 +17,8 @@ function draw() {
   fill(255, 0, 255);
   orbitControl();
   
+  star.forEach(forMet);
+  
   for(var x = 0; x < star.length; x++ ){
     star[x].move();
     star[x].show();
@@ -37,6 +39,14 @@ function createStars(){
         star.push(new Star(ex/100, ey/100, ez/100, color(random(255),random(255),random(255))));
       }
     }
+  }
+}
+
+function forMet(item, index, array){
+  item.move();
+  item.show();
+  if(item.checkBound()){
+    array.splice(index,1);
   }
 }
 //function mousePressed(){
