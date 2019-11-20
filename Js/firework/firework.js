@@ -1,4 +1,5 @@
 var angleX = 0, angleY = 0, angleZ = 0;
+let count = 0;
 let star = [];
 function setup() {
   createCanvas(800,800, WEBGL);
@@ -11,6 +12,7 @@ function setup() {
 
 
 function draw() {
+  why = count < 40 ? count++ : (count = 0, createStars());
   background(0);
   noStroke();
   rectMode(CENTER);

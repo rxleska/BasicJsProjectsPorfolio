@@ -1,5 +1,7 @@
 var angleX = 0, angleY = 0, angleZ = 0;
 let star = [];
+let ky = true;
+let count = 0;
 function setup() {
   createCanvas(800,800, WEBGL);
   
@@ -11,6 +13,9 @@ function setup() {
 
 
 function draw() {
+  if(ky){
+  why = count < 40 ? count++ : (count = 0, createStars());
+  }
   background(0);
   noStroke();
   rectMode(CENTER);
@@ -27,6 +32,7 @@ function draw() {
 
 function keyPressed(){
   if(keyCode == UP_ARROW){
+    ky = false;
     createStars();
     
   }
