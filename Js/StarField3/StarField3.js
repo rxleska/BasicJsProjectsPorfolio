@@ -39,7 +39,7 @@ function drawDots(item, index, array){
 
 
 function addDots(){
-  for(var a = x; a <= x + y; a+=(random(10,20)/4)){
+  for(var a = x + (random(10, 20)/5); a <= x + y; a+=(random(10,20)/4)){
       dots.push(new Dots(5, -0.1, a, 1, -0.01));
     }  
 }
