@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   if(ky){
-  why = count < 40 ? count++ : (count = 0, createStars());
+  why = count < 120 ? count++ : (count = 0, createStars());
   }
   background(0);
   noStroke();
@@ -24,10 +24,10 @@ function draw() {
   
   star.forEach(forMet);
   
-  for(var x = 0; x < star.length; x++ ){
-    star[x].move();
-    star[x].show();
-  }
+  //for(var x = 0; x < star.length; x++ ){
+  //  star[x].move();
+  //  star[x].show();
+  //}
 }
 
 function keyPressed(){
