@@ -10,6 +10,7 @@ function setup() {
 
 function draw() {
   background(0);
+  bacteria.forEach(bound);
   why = count < 30 ? (count++, cliMove = true) : cliMove = false ;
   
   bacteria.forEach(forCell);
@@ -37,10 +38,25 @@ function mouseClicked(){
 }
 
 function doM(item, index, array){
+  if(item.getX() < mouseX + 200 && item.getX() > mouseX - 200 && item.getY() < mouseY + 200 && item.getY() > mouseY - 200){
+    item.setMove(mouseX, mouseY, true);
+  }
+  else{
+    item.setM();  
+  }
   count = 0;
-  item.setMove(mouseX, mouseY);
+  
 }
 function keyPressed(){
-  count = -50;
-  item.setMove(width/2, height/2);
+  count = -10;
+  bacteria.forEach(doK);
+}
+
+function doK(item, index, array){
+  item.setMove(width/2, height/2, false);
+  
+}
+
+function bound(item, index, array){
+  item.bounce();
 }
