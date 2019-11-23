@@ -5,9 +5,7 @@ class Star{
     this.vecMo = createVector(1,1,1);
     //this.rotV = createVector(random(-100,100)/100,random(-100,100)/100,random(-100,100)/100);
     this.rotV = createVector(x,y,z);
-    print(x+" "+y+" "+z);
     this.col = color(c);
-    this.fade = 200;
     //print(this.vecMo.x + "" + this.vecMo.y + "" + this.vecMo.z);
   }
   
@@ -27,11 +25,7 @@ class Star{
     sphere(5, 5);
     pop();
   }
-  
-  checkBound(){
-    if(this.vec.x > this.fade && this.vec.y > this.fade && this.vec.z > this.fade){
-      return true;
-    }
-    return false;  
+  getOut(){
+		return this.vec.x;
   }
 }

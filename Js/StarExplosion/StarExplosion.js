@@ -1,42 +1,33 @@
-var angleX = 0, angleY = 0, angleZ = 0;
+var angleX = 0, angleY = 0, angleZ = 0, count = 49;
 let star = [];
-let ky = true;
-let count = 0;
 function setup() {
   createCanvas(800,800, WEBGL);
   
   //star.push(new Star(0,0,0, color(random(255),random(255),random(255))));
-  frameRate(60);
+  frameRate(40);
   angleMode(DEGREES);
   //createStars();
 }
 
 
 function draw() {
-  if(ky){
-  why = count < 120 ? count++ : (count = 0, createStars());
-  }
   background(0);
   noStroke();
   rectMode(CENTER);
   fill(255, 0, 255);
   orbitControl();
-  
-  star.forEach(forMet);
-  
-  //for(var x = 0; x < star.length; x++ ){
-  //  star[x].move();
-  //  star[x].show();
-  //}
+  why = count < 50 ? count++ : (count = 0, createStars());
+	
+	star.forEach(forStar);
 }
 
 function keyPressed(){
   if(keyCode == UP_ARROW){
-    ky = false;
     createStars();
     
   }
 }
+
 function createStars(){
   
   for(var ex = -100; ex <= 100; ex+= 20){
@@ -48,13 +39,10 @@ function createStars(){
   }
 }
 
-function forMet(item, index, array){
-  item.move();
-  item.show();
-  if(item.checkBound()){
-    array.splice(index,1);
-  }
+function forStar(item, index, arr){
+		item.move();
+    item.show();
+		if(item.getOut() > 250){
+				arr.splice(index,1);
+		}
 }
-//function mousePressed(){
-//  star.push(new Star(0,0,0,0));
-//}
