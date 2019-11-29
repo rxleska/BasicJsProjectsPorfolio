@@ -8,7 +8,7 @@ let accChangeT = 0;
 function setup() {
   createCanvas(displayWidth, displayHeight);
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 40; i++) {
     balls.push(new Ball());
   }
 }
@@ -53,7 +53,7 @@ class Ball {
   constructor() {
     this.x = random(width);
     this.y = random(height);
-    this.diameter = random(10, 30);
+    this.diameter = random(1, 10);
     this.xspeed = random(-2, 2);
     this.yspeed = random(-2, 2);
     this.oxspeed = this.xspeed;
@@ -86,8 +86,8 @@ class Ball {
   // Add to xspeed and yspeed based on
   // the change in accelerationX value
   shake() {
-    this.xspeed += random(5, accChangeX / 3);
-    this.yspeed += random(5, accChangeX / 3);
+    this.xspeed += accChangeX / 3;
+    this.yspeed +=  accChangeX / 3;
   }
 
   // Gradually slows down
